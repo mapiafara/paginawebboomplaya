@@ -1,12 +1,17 @@
 {
   "name": "paginawebboomplaya",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "description": "Static website for Boom Playa beach volleyball school.",
+  "license": "MIT",
+  "author": "mapiafara",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^6.3.3"
   }
 }

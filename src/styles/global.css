@@ -1,0 +1,386 @@
+:root {
+  color-scheme: light;
+  --ink: #10233f;
+  --muted: #5e6c7f;
+  --paper: #fff8ed;
+  --sand: #f4d59d;
+  --sun: #f88b2d;
+  --coral: #ef4d35;
+  --sea: #0f8bb3;
+  --sky: #b9e7ef;
+  --deep: #071a35;
+  --white: #ffffff;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px clamp(18px, 4vw, 56px);
+  background: rgb(255 248 237 / 92%);
+  border-bottom: 1px solid rgb(16 35 63 / 12%);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: grid;
+  line-height: 0.86;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.site-header nav a:hover {
+  color: var(--ink);
+}
+
+.header-action,
+.button,
+form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 6px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.header-action,
+.button.primary,
+form button {
+  background: var(--coral);
+  color: var(--white);
+}
+
+.button.secondary {
+  background: var(--white);
+  color: var(--deep);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: clamp(560px, 86vh, 780px);
+  overflow: hidden;
+  background: var(--deep);
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, rgb(7 26 53 / 88%), rgb(7 26 53 / 42%), rgb(7 26 53 / 8%));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  width: min(720px, 100%);
+  padding: clamp(42px, 8vw, 96px) clamp(20px, 6vw, 72px);
+  color: var(--white);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--sea);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: var(--sky);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(4.3rem, 13vw, 9rem);
+  line-height: 0.82;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2.1rem, 5vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+h3 {
+  font-size: 1.35rem;
+  line-height: 1.05;
+}
+
+.hero-content p:not(.eyebrow) {
+  max-width: 560px;
+  color: rgb(255 255 255 / 88%);
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 1.55;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.notice-band {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: rgb(16 35 63 / 14%);
+}
+
+.notice-band article {
+  padding: clamp(22px, 4vw, 42px);
+  background: var(--white);
+}
+
+.notice-band span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--coral);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.notice-band strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.28rem;
+}
+
+.section {
+  padding: clamp(54px, 8vw, 104px) clamp(20px, 6vw, 72px);
+}
+
+.split,
+.gallery,
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  gap: clamp(28px, 6vw, 80px);
+  align-items: start;
+}
+
+.text-stack,
+.feature-list {
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: rgb(16 35 63 / 14%);
+}
+
+.program-card {
+  min-height: 280px;
+  padding: 28px;
+  background: var(--deep);
+  color: var(--white);
+}
+
+.program-card:nth-child(2) {
+  background: var(--sea);
+}
+
+.program-card:nth-child(3) {
+  background: var(--sun);
+  color: var(--deep);
+}
+
+.program-card:nth-child(4) {
+  background: var(--coral);
+}
+
+.program-card p {
+  color: rgb(255 255 255 / 84%);
+  line-height: 1.55;
+}
+
+.program-card:nth-child(3) p {
+  color: rgb(16 35 63 / 78%);
+}
+
+.program-card span {
+  font-weight: 900;
+}
+
+.feature {
+  background: var(--white);
+}
+
+.feature.warm {
+  background: var(--sand);
+}
+
+.feature.blue {
+  background: var(--sky);
+}
+
+.feature h2 {
+  max-width: 920px;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature-list p,
+.gallery-grid div {
+  min-height: 120px;
+  padding: 22px;
+  background: rgb(255 255 255 / 72%);
+  border: 1px solid rgb(16 35 63 / 12%);
+  border-radius: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid div {
+  display: grid;
+  min-height: 150px;
+  place-items: end start;
+  color: var(--white);
+  font-weight: 900;
+  background:
+    linear-gradient(135deg, rgb(7 26 53 / 72%), rgb(239 77 53 / 28%)),
+    url('/boom-playa-concept.webp') center / cover;
+}
+
+.contact {
+  background: var(--deep);
+  color: var(--white);
+}
+
+.contact p {
+  color: rgb(255 255 255 / 76%);
+  line-height: 1.65;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: rgb(255 255 255 / 78%);
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 6px;
+  padding: 12px 14px;
+  background: rgb(255 255 255 / 10%);
+  color: var(--white);
+}
+
+textarea {
+  resize: vertical;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    position: static;
+    align-items: flex-start;
+  }
+
+  .site-header nav {
+    display: none;
+  }
+
+  .hero::after {
+    background: linear-gradient(180deg, rgb(7 26 53 / 84%), rgb(7 26 53 / 34%));
+  }
+
+  .notice-band,
+  .split,
+  .gallery,
+  .contact,
+  .feature-list,
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card {
+    min-height: 220px;
+  }
+}
