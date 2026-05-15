@@ -114,6 +114,34 @@ form button {
   cursor: pointer;
 }
 
+.header-tools {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 7%);
+  color: var(--sun);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.language-toggle:hover {
+  border-color: rgb(255 179 71 / 48%);
+  background: rgb(255 179 71 / 10%);
+}
+
 .header-action,
 .button.primary,
 form button {
@@ -651,6 +679,15 @@ textarea {
   .header-action {
     min-height: 40px;
     padding-inline: 16px;
+  }
+
+  .header-tools {
+    gap: 8px;
+  }
+
+  .language-toggle {
+    width: 40px;
+    height: 40px;
   }
 
   h1 {

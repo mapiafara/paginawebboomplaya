@@ -17,5 +17,16 @@ const activePath = normalize(currentPath);
       return <a class:list={{ active: isActive }} href={item.href}>{item.label}</a>;
     })}
   </nav>
-  <a class="header-action" href="/entrena/#unete">Unete</a>
+  <div class="header-tools">
+    <button
+      class="language-toggle"
+      type="button"
+      data-language-toggle
+      data-i18n-ignore
+      aria-label="Switch language to English"
+    >
+      EN
+    </button>
+    <a class="header-action" href="/entrena/#unete">Unete</a>
+  </div>
 </header>
