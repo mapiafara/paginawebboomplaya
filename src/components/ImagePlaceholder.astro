@@ -1,0 +1,9 @@
+---
+import { placeholderLabel } from '../data/site.js';
+
+const { label = placeholderLabel, tone = 'sea' } = Astro.props;
+---
+
+<div class:list={['image-placeholder', tone]} role="img" aria-label={label}>
+  <span>{label}</span>
+</div>

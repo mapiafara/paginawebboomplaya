@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<BaseLayout
+  title="Boom Playa | Entrena"
+  description="Categorias, horarios, beneficios, retos mensuales, afiliacion, planes y registro de Boom Playa."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Entrena</p>
+        <h1>Categorias, horarios y retos de desarrollo.</h1>
+        <p>
+          Informacion para entrar al proceso de entrenamiento segun edad, nivel
+          y objetivos deportivos.
+        </p>
+      </div>
+      <ImagePlaceholder label="Placeholder para entrenamiento en arena" tone="sun" />
+    </section>
+
+    <section class="section feature">
+      <p class="eyebrow">Categorias</p>
+      <h2>Grupos por nivel y edad.</h2>
+      <div class="feature-list">
+        <p>Principiantes: fundamentos, movilidad y confianza en la arena.</p>
+        <p>Intermedios: tecnica, lectura de juego y continuidad.</p>
+        <p>Avanzados: estrategia, competencia y objetivos de rendimiento.</p>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Horarios y beneficios</p>
+        <h2>Un proceso constante y medible.</h2>
+      </div>
+      <div class="text-stack">
+        <p>Horarios semanales por grupo, disponibilidad y sede.</p>
+        <p>Beneficios: tecnica, acondicionamiento, juego real, comunidad y seguimiento.</p>
+        <p>Retos mensuales enlazados con las manillas de desarrollo.</p>
+      </div>
+    </section>
+
+    <section id="unete" class="section contact light">
+      <div>
+        <p class="eyebrow">Unete a Boom Playa</p>
+        <h2>Afiliacion, planes y precios.</h2>
+        <p>
+          Esta zona resume opciones de afiliacion, planes disponibles, precios y
+          detalles que una persona necesita antes de registrarse.
+        </p>
+      </div>
+      <form>
+        <label>
+          Nombre
+          <input type="text" name="name" autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" />
+        </label>
+        <label>
+          Nivel o edad
+          <input type="text" name="level" />
+        </label>
+        <button type="submit">Solicitar registro</button>
+      </form>
+    </section>
+  </main>
+</BaseLayout>

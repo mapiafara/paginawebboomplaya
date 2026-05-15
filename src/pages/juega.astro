@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<BaseLayout
+  title="Boom Playa | Juega"
+  description="Grupo de juego, alquiler de cancha, cumpleanos, integraciones empresariales y formulario de solicitud."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Juega</p>
+        <h1>Cancha, grupos de juego y eventos especiales.</h1>
+        <p>
+          Opciones para sumar partidos, alquilar cancha o crear una experiencia
+          en arena para amigos, familias o empresas.
+        </p>
+      </div>
+      <ImagePlaceholder label="Placeholder para juego libre o evento" tone="sea" />
+    </section>
+
+    <section class="section feature blue">
+      <p class="eyebrow">Opciones</p>
+      <h2>Jugar tambien hace parte del proceso.</h2>
+      <div class="feature-list">
+        <p>Grupo de juego para quienes quieren sumar partidos y conocer gente.</p>
+        <p>Alquiler de cancha por horario, sede y disponibilidad.</p>
+        <p>Eventos especiales: cumpleanos e integraciones empresariales.</p>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div>
+        <p class="eyebrow">Solicitud</p>
+        <h2>Solicita alquiler o evento.</h2>
+        <p>
+          Formulario breve para revisar disponibilidad y responder con una opcion
+          adecuada al grupo.
+        </p>
+      </div>
+      <form>
+        <label>
+          Nombre
+          <input type="text" name="name" autocomplete="name" />
+        </label>
+        <label>
+          Tipo de solicitud
+          <input type="text" name="request" placeholder="Alquiler, cumpleanos o integracion" />
+        </label>
+        <label>
+          Fecha tentativa
+          <input type="text" name="date" />
+        </label>
+        <button type="submit">Solicitar disponibilidad</button>
+      </form>
+    </section>
+  </main>
+</BaseLayout>

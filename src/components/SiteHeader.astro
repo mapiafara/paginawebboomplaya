@@ -1,0 +1,21 @@
+---
+import { navItems } from '../data/site.js';
+
+const currentPath = Astro.url.pathname;
+const normalize = (href) => (href === '/' ? '/' : href.replace(/\/$/, ''));
+const activePath = normalize(currentPath);
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Boom Playa inicio">
+    <span>BOOM</span>
+    <span>PLAYA</span>
+  </a>
+  <nav aria-label="Principal">
+    {navItems.map((item) => {
+      const isActive = normalize(item.href) === activePath;
+      return <a class:list={{ active: isActive }} href={item.href}>{item.label}</a>;
+    })}
+  </nav>
+  <a class="header-action" href="/entrena/#unete">Unete</a>
+</header>

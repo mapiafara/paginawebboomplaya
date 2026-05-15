@@ -1,60 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const navItems = [
-  ['Boom Playa', '#club'],
-  ['Entrena', '#entrena'],
-  ['Sumergite', '#campamentos'],
-  ['Compite', '#torneos'],
-  ['Juega', '#juega'],
-  ['Galeria', '#galeria'],
-  ['Contacto', '#contacto'],
-];
-
-const programs = [
-  {
-    title: 'Entrena',
-    text: 'Categorias por edad y nivel, horarios semanales, retos mensuales y seguimiento al proceso deportivo.',
-    href: '#entrena',
-  },
-  {
-    title: 'Sumergite',
-    text: 'Campamentos de beach volley con entrenamiento, actividades, fechas especiales y cupos limitados.',
-    href: '#campamentos',
-  },
-  {
-    title: 'Compite',
-    text: 'Torneos internos, torneos abiertos, calendario competitivo e historias de progreso del club.',
-    href: '#torneos',
-  },
-  {
-    title: 'Juega',
-    text: 'Grupos de juego, alquiler de cancha y eventos especiales para celebraciones o integraciones.',
-    href: '#juega',
-  },
-];
-
-const galleryItems = ['Entrenamientos', 'Torneos', 'Campamentos', 'Comunidad'];
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { programCards } from '../data/site.js';
 ---
 
 <BaseLayout
-  title="Boom Playa | Escuela de Beach Volley"
-  description="Boom Playa es una escuela de beach volley para entrenar, jugar, competir y vivir la arena en comunidad."
+  title="Boom Playa | Inicio"
+  description="Inicio de Boom Playa: noticias, testimonios y accesos principales a entrenamientos, campamentos, torneos y juego."
 >
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Boom Playa inicio">
-      <span>BOOM</span>
-      <span>PLAYA</span>
-    </a>
-    <nav aria-label="Principal">
-      {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
-    </nav>
-    <a class="header-action" href="#contacto">Unete</a>
-  </header>
+  <SiteHeader />
 
   <main>
     <section class="hero">
-      <img src="/boom-playa-concept.webp" alt="Concepto visual de Boom Playa con colores de playa y volleyball" />
+      <ImagePlaceholder label="Foto o video principal de Boom Playa" tone="hero" />
       <div class="hero-content">
         <p class="eyebrow">Escuela de beach volley</p>
         <h1>BOOM PLAYA</h1>
@@ -63,8 +22,8 @@ const galleryItems = ['Entrenamientos', 'Torneos', 'Campamentos', 'Comunidad'];
           el progreso deportivo y la energia de playa.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#entrena">Ver entrenamientos</a>
-          <a class="button secondary" href="#contacto">Pedir informacion</a>
+          <a class="button primary" href="/entrena/">Ver entrenamientos</a>
+          <a class="button secondary" href="/contacto/">Pedir informacion</a>
         </div>
       </div>
     </section>
@@ -78,114 +37,32 @@ const galleryItems = ['Entrenamientos', 'Torneos', 'Campamentos', 'Comunidad'];
       <article>
         <span>Testimonio</span>
         <strong>"El entrenamiento me ayudo a jugar con mas confianza."</strong>
-        <p>Historias reales del club entraran en esta seccion.</p>
+        <p>Este espacio puede rotar historias reales de jugadores y familias.</p>
+      </article>
+      <article>
+        <span>Testimonio</span>
+        <strong>"La comunidad hace que uno quiera volver a la arena."</strong>
+        <p>Un segundo testimonio corto ayuda a mostrar el espiritu del club.</p>
       </article>
     </section>
 
-    <section id="club" class="section split">
-      <div>
-        <p class="eyebrow">El club</p>
-        <h2>Una escuela para crecer dentro y fuera de la cancha.</h2>
-      </div>
-      <div class="text-stack">
-        <p>
-          Boom Playa combina formacion tecnica, juego, comunidad y experiencias
-          deportivas para personas que quieren acercarse al beach volley o llevar
-          su nivel mas lejos.
-        </p>
-        <p>
-          Aqui iran la historia, valores, mision, vision y el equipo tecnico y
-          administrativo.
-        </p>
-      </div>
+    <section class="section intro">
+      <p class="eyebrow">Explora Boom Playa</p>
+      <h2>Cada seccion ahora vive en su propia pagina.</h2>
+      <p>
+        Usa el menu superior para entrar a la informacion completa de cada area:
+        club, entrenamientos, campamentos, torneos, juego libre, galeria y contacto.
+      </p>
     </section>
 
     <section class="program-grid" aria-label="Programas principales">
-      {programs.map((program) => (
+      {programCards.map((program) => (
         <a class="program-card" href={program.href}>
           <h3>{program.title}</h3>
           <p>{program.text}</p>
           <span>Explorar</span>
         </a>
       ))}
-    </section>
-
-    <section id="entrena" class="section feature">
-      <p class="eyebrow">Entrena</p>
-      <h2>Categorias, horarios y retos de desarrollo.</h2>
-      <div class="feature-list">
-        <p>Niveles para principiantes, intermedios y avanzados.</p>
-        <p>Grupos por edad y objetivos deportivos.</p>
-        <p>Planes, precios y formulario de registro.</p>
-      </div>
-    </section>
-
-    <section id="campamentos" class="section feature warm">
-      <p class="eyebrow">Sumergite</p>
-      <h2>Campamentos para entrenar, conectar y vivir la arena.</h2>
-      <div class="feature-list">
-        <p>Fechas, ubicaciones y beneficios del campamento.</p>
-        <p>Incluye entrenamientos, actividades y experiencias de comunidad.</p>
-        <p>Reserva de cupo con llamada a la accion clara.</p>
-      </div>
-    </section>
-
-    <section id="torneos" class="section split">
-      <div>
-        <p class="eyebrow">Compite</p>
-        <h2>Calendario competitivo para medir el progreso.</h2>
-      </div>
-      <div class="text-stack">
-        <p>Torneos internos con resultados pasados y seguimiento de jugadores.</p>
-        <p>Torneos abiertos con inscripciones, detalles y proximos eventos.</p>
-        <p>Participacion externa e historias de exito de la comunidad.</p>
-      </div>
-    </section>
-
-    <section id="juega" class="section feature blue">
-      <p class="eyebrow">Juega</p>
-      <h2>Cancha, grupos de juego y eventos especiales.</h2>
-      <div class="feature-list">
-        <p>Grupo de juego para quienes quieren sumar partidos.</p>
-        <p>Alquiler de cancha con formulario breve.</p>
-        <p>Cumpleanos e integraciones empresariales.</p>
-      </div>
-    </section>
-
-    <section id="galeria" class="section gallery">
-      <div>
-        <p class="eyebrow">Galeria</p>
-        <h2>Fotos y videos por categoria.</h2>
-      </div>
-      <div class="gallery-grid">
-        {galleryItems.map((item) => <div>{item}</div>)}
-      </div>
-    </section>
-
-    <section id="contacto" class="section contact">
-      <div>
-        <p class="eyebrow">Contacto</p>
-        <h2>Hablemos de tu proximo entrenamiento.</h2>
-        <p>
-          Esta seccion tendra formulario de preguntas, datos de contacto y mapa
-          de ubicaciones.
-        </p>
-      </div>
-      <form>
-        <label>
-          Nombre
-          <input type="text" name="name" autocomplete="name" />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" autocomplete="email" />
-        </label>
-        <label>
-          Mensaje
-          <textarea name="message" rows="4"></textarea>
-        </label>
-        <button type="submit">Enviar</button>
-      </form>
     </section>
   </main>
 </BaseLayout>

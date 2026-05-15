@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<BaseLayout
+  title="Boom Playa | Contacto"
+  description="Formulario de preguntas, informacion de contacto, mapa de ubicaciones e inicio de sesion para miembros."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h1>Hablemos de tu proximo entrenamiento.</h1>
+        <p>
+          Preguntas, informacion de contacto, ubicaciones y acceso para miembros
+          en un solo lugar.
+        </p>
+      </div>
+      <ImagePlaceholder label="Placeholder para mapa o ubicacion" tone="sea" />
+    </section>
+
+    <section class="section contact">
+      <div>
+        <p class="eyebrow">Preguntas</p>
+        <h2>Escribenos.</h2>
+        <p>
+          Este formulario puede conectar con WhatsApp, email o una herramienta de
+          registros cuando este definida.
+        </p>
+      </div>
+      <form>
+        <label>
+          Nombre
+          <input type="text" name="name" autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" />
+        </label>
+        <label>
+          Mensaje
+          <textarea name="message" rows="4"></textarea>
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section class="section two-column soft">
+      <article>
+        <p class="eyebrow">Informacion</p>
+        <h2>Datos de contacto</h2>
+        <p>Telefono, WhatsApp, correo, redes sociales y horarios de atencion.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Ubicaciones</p>
+        <h2>Mapa</h2>
+        <ImagePlaceholder label="Placeholder para mapa de ubicaciones" tone="small" />
+      </article>
+    </section>
+
+    <section class="section member-login">
+      <div>
+        <p class="eyebrow">Miembros</p>
+        <h2>Iniciar sesion para miembros.</h2>
+        <p>
+          Opciones por definir: informacion personal, horarios, asistencias,
+          eventos, reserva de canchas, programas fisicos y cupos K-Boom.
+        </p>
+      </div>
+      <form>
+        <label>
+          Usuario
+          <input type="text" name="user" autocomplete="username" />
+        </label>
+        <label>
+          Contrasena
+          <input type="password" name="password" autocomplete="current-password" />
+        </label>
+        <button type="submit">Iniciar sesion</button>
+      </form>
+    </section>
+  </main>
+</BaseLayout>

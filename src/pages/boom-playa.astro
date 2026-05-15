@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<BaseLayout
+  title="Boom Playa | Club"
+  description="Historia, valores, mision, vision y equipo tecnico y administrativo de Boom Playa."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Boom Playa</p>
+        <h1>El club</h1>
+        <p>
+          Una escuela para crecer dentro y fuera de la cancha, con formacion
+          tecnica, comunidad y experiencias deportivas en la arena.
+        </p>
+      </div>
+      <ImagePlaceholder label="Placeholder para imagen del equipo o la cancha" />
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Historia y valores</p>
+        <h2>Una cultura de juego, disciplina y alegria.</h2>
+      </div>
+      <div class="text-stack">
+        <p>
+          Aqui va la historia de Boom Playa: como nace el club, que momentos han
+          marcado su crecimiento y que tipo de comunidad busca construir.
+        </p>
+        <p>
+          Los valores pueden destacar respeto, constancia, trabajo en equipo,
+          disfrute del proceso y amor por el beach volley.
+        </p>
+      </div>
+    </section>
+
+    <section class="section two-column soft">
+      <article>
+        <h2>Mision</h2>
+        <p>
+          Formar jugadores y personas a traves del beach volley, ofreciendo un
+          espacio seguro, retador y cercano para aprender, jugar y competir.
+        </p>
+      </article>
+      <article>
+        <h2>Vision</h2>
+        <p>
+          Ser una comunidad referente de beach volley, reconocida por su energia,
+          calidad de entrenamiento y capacidad de crear experiencias memorables.
+        </p>
+      </article>
+    </section>
+
+    <section class="section gallery">
+      <div>
+        <p class="eyebrow">Equipo</p>
+        <h2>Equipo tecnico y administrativo.</h2>
+      </div>
+      <div class="staff-grid">
+        <article>
+          <ImagePlaceholder label="Foto de entrenador" tone="small" />
+          <h3>Entrenador principal</h3>
+          <p>Perfil, experiencia y enfoque de entrenamiento.</p>
+        </article>
+        <article>
+          <ImagePlaceholder label="Foto de apoyo tecnico" tone="small" />
+          <h3>Apoyo tecnico</h3>
+          <p>Perfil, rol dentro de la escuela y grupos que acompana.</p>
+        </article>
+        <article>
+          <ImagePlaceholder label="Foto de administracion" tone="small" />
+          <h3>Administracion</h3>
+          <p>Contacto operativo, inscripciones, reservas y comunicaciones.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

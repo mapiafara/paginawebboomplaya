@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<BaseLayout
+  title="Boom Playa | Sumergite"
+  description="Campamentos de Boom Playa: beneficios, fechas, ubicaciones, actividades y reserva de cupo."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Sumergite</p>
+        <h1>Campamentos para entrenar, conectar y vivir la arena.</h1>
+        <p>
+          Experiencias intensivas de beach volley con entrenamiento, actividades
+          y comunidad.
+        </p>
+      </div>
+      <ImagePlaceholder label="Placeholder para foto o video de campamento" tone="sun" />
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Campamentos</p>
+        <h2>Descripcion general y beneficios.</h2>
+      </div>
+      <div class="text-stack">
+        <p>Espacio para explicar el formato del campamento y a quien esta dirigido.</p>
+        <p>Beneficios: mas horas de arena, convivencia, aprendizaje intensivo y retos.</p>
+        <p>Ideal para jugadores que quieren mejorar tecnica y vivir una experiencia de club.</p>
+      </div>
+    </section>
+
+    <section class="section feature warm">
+      <p class="eyebrow">Detalles</p>
+      <h2>Fechas, ubicaciones y que incluye.</h2>
+      <div class="feature-list">
+        <p>Fechas disponibles, duracion y cupos.</p>
+        <p>Ubicaciones, punto de encuentro y requisitos.</p>
+        <p>Incluye entrenamientos, actividades y momentos de comunidad.</p>
+      </div>
+      <a class="button primary section-action" href="/contacto/">Reserva tu lugar ahora</a>
+    </section>
+  </main>
+</BaseLayout>

@@ -49,13 +49,14 @@ textarea {
   justify-content: space-between;
   gap: 24px;
   padding: 16px clamp(18px, 4vw, 56px);
-  background: rgb(255 248 237 / 92%);
+  background: rgb(255 248 237 / 94%);
   border-bottom: 1px solid rgb(16 35 63 / 12%);
   backdrop-filter: blur(16px);
 }
 
 .brand {
   display: grid;
+  flex: 0 0 auto;
   line-height: 0.86;
   font-weight: 900;
   letter-spacing: 0;
@@ -65,13 +66,20 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px 18px;
+  gap: 6px 14px;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 0.92rem;
 }
 
-.site-header nav a:hover {
+.site-header nav a {
+  padding: 7px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
   color: var(--ink);
+  border-bottom-color: var(--coral);
 }
 
 .header-action,
@@ -103,25 +111,30 @@ form button {
 .hero {
   position: relative;
   display: grid;
-  min-height: clamp(560px, 86vh, 780px);
+  min-height: clamp(540px, 82vh, 740px);
   overflow: hidden;
   background: var(--deep);
 }
 
-.hero img {
+.hero .image-placeholder {
   position: absolute;
   inset: 0;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.7;
+  border: 0;
+  border-radius: 0;
+}
+
+.hero .image-placeholder span {
+  position: relative;
+  z-index: 1;
+  color: rgb(255 255 255 / 58%);
 }
 
 .hero::after {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(90deg, rgb(7 26 53 / 88%), rgb(7 26 53 / 42%), rgb(7 26 53 / 8%));
+  background: linear-gradient(90deg, rgb(7 26 53 / 88%), rgb(7 26 53 / 48%), rgb(7 26 53 / 12%));
 }
 
 .hero-content {
@@ -130,6 +143,17 @@ form button {
   align-self: center;
   width: min(720px, 100%);
   padding: clamp(42px, 8vw, 96px) clamp(20px, 6vw, 72px);
+  color: var(--white);
+}
+
+.page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+  gap: clamp(28px, 6vw, 80px);
+  align-items: center;
+  min-height: 520px;
+  padding: clamp(56px, 8vw, 100px) clamp(20px, 6vw, 72px);
+  background: var(--deep);
   color: var(--white);
 }
 
@@ -142,7 +166,8 @@ form button {
   text-transform: uppercase;
 }
 
-.hero .eyebrow {
+.hero .eyebrow,
+.page-hero .eyebrow {
   color: var(--sky);
 }
 
@@ -155,27 +180,33 @@ p {
 
 h1 {
   margin-bottom: 18px;
-  font-size: clamp(4.3rem, 13vw, 9rem);
-  line-height: 0.82;
+  font-size: clamp(3.2rem, 9vw, 8rem);
+  line-height: 0.88;
   letter-spacing: 0;
+}
+
+.page-hero h1 {
+  font-size: clamp(3rem, 7vw, 6.4rem);
 }
 
 h2 {
   margin-bottom: 18px;
-  font-size: clamp(2.1rem, 5vw, 4.6rem);
-  line-height: 0.95;
+  font-size: clamp(2rem, 4.6vw, 4.2rem);
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
 h3 {
+  margin-bottom: 10px;
   font-size: 1.35rem;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
-.hero-content p:not(.eyebrow) {
-  max-width: 560px;
-  color: rgb(255 255 255 / 88%);
-  font-size: clamp(1.05rem, 2vw, 1.28rem);
+.hero-content p:not(.eyebrow),
+.page-hero p:not(.eyebrow) {
+  max-width: 610px;
+  color: rgb(255 255 255 / 86%);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: 1.55;
 }
 
@@ -186,9 +217,48 @@ h3 {
   margin-top: 32px;
 }
 
+.image-placeholder {
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px dashed rgb(16 35 63 / 28%);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgb(15 139 179 / 18%), rgb(248 139 45 / 20%)),
+    repeating-linear-gradient(45deg, rgb(255 255 255 / 38%) 0 10px, rgb(255 255 255 / 12%) 10px 20px);
+  color: var(--ink);
+  text-align: center;
+  font-weight: 900;
+}
+
+.image-placeholder.hero {
+  color: rgb(255 255 255 / 82%);
+  background:
+    linear-gradient(135deg, rgb(7 26 53 / 80%), rgb(15 139 179 / 55%), rgb(248 139 45 / 42%)),
+    repeating-linear-gradient(45deg, rgb(255 255 255 / 18%) 0 14px, transparent 14px 28px);
+}
+
+.image-placeholder.sun {
+  background:
+    linear-gradient(135deg, rgb(248 139 45 / 35%), rgb(244 213 157 / 65%)),
+    repeating-linear-gradient(45deg, rgb(255 255 255 / 42%) 0 10px, transparent 10px 20px);
+}
+
+.image-placeholder.coral {
+  background:
+    linear-gradient(135deg, rgb(239 77 53 / 32%), rgb(15 139 179 / 18%)),
+    repeating-linear-gradient(45deg, rgb(255 255 255 / 42%) 0 10px, transparent 10px 20px);
+}
+
+.image-placeholder.small {
+  min-height: 150px;
+}
+
 .notice-band {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: rgb(16 35 63 / 14%);
 }
@@ -198,7 +268,8 @@ h3 {
   background: var(--white);
 }
 
-.notice-band span {
+.notice-band span,
+.schedule-grid span {
   display: block;
   margin-bottom: 10px;
   color: var(--coral);
@@ -210,16 +281,27 @@ h3 {
 .notice-band strong {
   display: block;
   margin-bottom: 8px;
-  font-size: 1.28rem;
+  font-size: 1.25rem;
 }
 
 .section {
   padding: clamp(54px, 8vw, 104px) clamp(20px, 6vw, 72px);
 }
 
+.intro {
+  max-width: 980px;
+}
+
+.intro p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
 .split,
 .gallery,
-.contact {
+.contact,
+.member-login {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
   gap: clamp(28px, 6vw, 80px);
@@ -227,9 +309,15 @@ h3 {
 }
 
 .text-stack,
-.feature-list {
+.feature-list,
+.two-column p,
+.schedule-grid p,
+.staff-grid p,
+.gallery-grid p,
+.quote-band p,
+.member-login p {
   color: var(--muted);
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   line-height: 1.7;
 }
 
@@ -289,14 +377,21 @@ h3 {
   max-width: 920px;
 }
 
-.feature-list {
+.feature-list,
+.schedule-grid,
+.staff-grid,
+.gallery-grid.large,
+.two-column {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
 .feature-list p,
-.gallery-grid div {
+.schedule-grid article,
+.staff-grid article,
+.gallery-grid.large article,
+.two-column article {
   min-height: 120px;
   padding: 22px;
   background: rgb(255 255 255 / 72%);
@@ -304,31 +399,60 @@ h3 {
   border-radius: 8px;
 }
 
-.gallery-grid {
-  display: grid;
+.two-column {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.soft {
+  background: rgb(255 255 255 / 52%);
+}
+
+.gallery-grid.large {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gallery-grid.large article {
+  display: grid;
   gap: 16px;
 }
 
-.gallery-grid div {
-  display: grid;
-  min-height: 150px;
-  place-items: end start;
-  color: var(--white);
-  font-weight: 900;
-  background:
-    linear-gradient(135deg, rgb(7 26 53 / 72%), rgb(239 77 53 / 28%)),
-    url('/boom-playa-concept.webp') center / cover;
+.section-action {
+  margin-top: 26px;
 }
 
-.contact {
+.quote-band {
   background: var(--deep);
   color: var(--white);
 }
 
-.contact p {
+.quote-band .eyebrow {
+  color: var(--sky);
+}
+
+.quote-band p {
+  max-width: 720px;
+  color: rgb(255 255 255 / 76%);
+}
+
+.contact,
+.member-login {
+  background: var(--deep);
+  color: var(--white);
+}
+
+.contact.light {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.contact p,
+.member-login p {
   color: rgb(255 255 255 / 76%);
   line-height: 1.65;
+}
+
+.contact.light p {
+  color: var(--muted);
 }
 
 form {
@@ -343,6 +467,10 @@ label {
   font-weight: 700;
 }
 
+.contact.light label {
+  color: var(--muted);
+}
+
 input,
 textarea {
   width: 100%;
@@ -353,14 +481,35 @@ textarea {
   color: var(--white);
 }
 
+.contact.light input,
+.contact.light textarea {
+  border-color: rgb(16 35 63 / 18%);
+  background: var(--paper);
+  color: var(--ink);
+}
+
 textarea {
   resize: vertical;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .site-header nav {
+    max-width: 620px;
+  }
+
+  .program-grid,
+  .gallery-grid.large {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
   .site-header {
     position: static;
-    align-items: flex-start;
   }
 
   .site-header nav {
@@ -368,16 +517,26 @@ textarea {
   }
 
   .hero::after {
-    background: linear-gradient(180deg, rgb(7 26 53 / 84%), rgb(7 26 53 / 34%));
+    background: linear-gradient(180deg, rgb(7 26 53 / 86%), rgb(7 26 53 / 42%));
   }
 
+  .page-hero,
   .notice-band,
   .split,
   .gallery,
   .contact,
+  .member-login,
   .feature-list,
+  .schedule-grid,
+  .staff-grid,
+  .gallery-grid.large,
+  .two-column,
   .program-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    min-height: auto;
   }
 
   .program-card {

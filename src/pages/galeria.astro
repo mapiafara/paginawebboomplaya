@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+
+const categories = ['Entrenamientos', 'Torneos', 'Campamentos', 'Comunidad', 'Eventos', 'Cancha'];
+---
+
+<BaseLayout
+  title="Boom Playa | Galeria"
+  description="Galeria de fotos y videos de entrenamientos, torneos y campamentos de Boom Playa."
+>
+  <SiteHeader />
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <p class="eyebrow">Galeria</p>
+        <h1>Fotos y videos por categoria.</h1>
+        <p>
+          Una navegacion simple para organizar entrenamientos, torneos,
+          campamentos, comunidad y eventos.
+        </p>
+      </div>
+      <ImagePlaceholder label="Placeholder para destacado de galeria" tone="coral" />
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">Categorias</p>
+      <h2>Contenido visual listo para cargar.</h2>
+      <div class="gallery-grid large">
+        {categories.map((category) => (
+          <article>
+            <ImagePlaceholder label={`Placeholder: ${category}`} tone="small" />
+            <h3>{category}</h3>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
