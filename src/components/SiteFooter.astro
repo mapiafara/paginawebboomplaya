@@ -1,0 +1,21 @@
+---
+import { contactLinks } from '../data/site.js';
+---
+
+<footer class="site-footer">
+  <div>
+    <a class="footer-brand" href="/" aria-label="Boom Playa inicio">
+      <span>BOOM</span>
+      <span>PLAYA</span>
+    </a>
+    <p>Contactanos para entrenamientos, reservas y eventos.</p>
+  </div>
+  <div class="footer-contact" aria-label="Informacion de contacto">
+    {contactLinks.map((item) => (
+      <a href={item.href} target="_blank" rel="noopener noreferrer">
+        <span>{item.label}</span>
+        <strong>{item.value}</strong>
+      </a>
+    ))}
+  </div>
+</footer>

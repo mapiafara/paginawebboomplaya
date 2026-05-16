@@ -14,6 +14,25 @@ const activePath = normalize(currentPath);
   <nav aria-label="Principal">
     {navItems.map((item) => {
       const isActive = normalize(item.href) === activePath;
+      const hasActiveChild = item.children?.some((child) => normalize(child.href) === activePath);
+
+      if (item.children) {
+        return (
+          <div class:list={['nav-dropdown', { active: isActive || hasActiveChild }]}>
+            <a href={item.href} aria-haspopup="true" aria-expanded="false">
+              {item.label}
+            </a>
+            <div class="nav-dropdown-menu" aria-label={item.label}>
+              {item.children.map((child) => (
+                <a class:list={{ active: normalize(child.href) === activePath }} href={child.href}>
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      }
+
       return <a class:list={{ active: isActive }} href={item.href}>{item.label}</a>;
     })}
   </nav>

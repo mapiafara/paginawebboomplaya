@@ -1,12 +1,31 @@
 export const navItems = [
   { label: 'Inicio', href: '/' },
   { label: 'Boom Playa', href: '/boom-playa/' },
-  { label: 'Entrena', href: '/entrena/' },
-  { label: 'Sumergite', href: '/sumergite/' },
-  { label: 'Compite', href: '/compite/' },
-  { label: 'Juega', href: '/juega/' },
+  {
+    label: 'Servicios',
+    href: '/entrena/',
+    children: [
+      { label: 'Entrena', href: '/entrena/' },
+      { label: 'Sumergete', href: '/sumergite/' },
+      { label: 'Compite', href: '/compite/' },
+      { label: 'Juega', href: '/juega/' },
+    ],
+  },
   { label: 'Galeria', href: '/galeria/' },
   { label: 'Contacto', href: '/contacto/' },
+];
+
+export const contactLinks = [
+  {
+    label: 'Instagram',
+    value: '@boom.playa',
+    href: 'https://www.instagram.com/boom.playa/',
+  },
+  {
+    label: 'Whatsapp',
+    value: '+57 3108410536',
+    href: 'https://wa.me/573108410536',
+  },
 ];
 
 export const programCards = [
